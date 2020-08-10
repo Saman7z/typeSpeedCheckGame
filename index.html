@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
+    <!-- <link rel="stylesheet" href="./fontawesome-free-5.13.0-web/css/all.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Welcome | Home | Page</title>
+  </head>
+  <body class="body">
+    <div class="container">
+      <div class="difficulty-container">
+        <div class="difficulty">
+          <label>Setting difficulty</label>
+          <select id="selectDifficulty">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+      <div class="main-section-container">
+        <div class="bonus-container">
+          +<span id="bonus"></span>s
+        </div>
+          <div class="scores-container">
+            <div class="score-title">Correct Answers :&nbsp;</div>
+            <div id="score">0</div>
+          </div>
+          <div class="time-container">
+            <div class="time-title">Time Left :&nbsp;</div>
+            <div id="time">10</div>s
+          </div>
+          <div class="test-sec-container">
+          <h1>Check Your Type Speed</h1>
+
+          <button id="start-btn">Start</button>
+          <div class="test-section">
+            <h3>Type The Following:</h3>
+            <div class="word">darg</div>
+            <input type="text" placeholder="TYPE HERE ..." id="input-box">
+          </div>
+        </div>
+      </div>
+      <div class="setting-container">
+        <i class="fa fa-cog"></i>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

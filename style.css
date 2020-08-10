@@ -1,0 +1,344 @@
+:root {
+  --back-color: rgba(129, 129, 129, 0.13);
+  --success-color: #2ecc71;
+  --blue-color: rgba(29, 161, 242, 1);
+  --hover-back-color: rgb(228, 243, 255);
+  --border: 1px solid rgb(228, 227, 227);
+  --dark-hover-color: rgb(60, 56, 68);
+  --tweet-item-hover: rgb(241, 249, 255);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(./assets/Roboto-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+body {
+  font-size: 18;
+  font-family: roboto, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  background-color: var(--dark-hover-color);
+}
+.container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.setting-container {
+  position: fixed;
+  bottom: 3rem;
+  left: 4rem;
+  background-color: aliceblue;
+  color: #333;
+  padding: 1.2rem;
+  border-radius: 24px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.setting-container:focus {
+  outline: none;
+}
+.setting-container:hover {
+  background-color: var(--blue-color);
+  color: aliceblue;
+}
+.setting-container:hover::after {
+  opacity: 1;
+}
+.setting-container::after {
+  content: "Toggles The Dificulty Section";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  /* margin-left: 2rem; */
+
+  transform: translate(105%, -50%);
+  color: #fff;
+  font-size: 1rem;
+  /* width: 500%; */
+  background-color: rgb(255, 75, 75);
+  padding: 1rem 2rem;
+  border-radius: 24px;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.3s ease;
+  /* display: none; */
+}
+
+/*! difficulty */
+.difficulty-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--back-color);
+  transition: all 0.4s ease;
+}
+.hide-difficulty-section {
+  transform: translateY(-100%);
+}
+.difficulty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.difficulty label {
+  color: #fff;
+  font-weight: bold;
+}
+#selectDifficulty {
+  margin: 0 2rem;
+  padding: 5px 1rem;
+  text-align: center;
+  border-radius: 8px;
+}
+#selectDifficulty:focus {
+  outline: none;
+}
+/*! main */
+.main-section-container{
+  background-color: var(--back-color);
+  padding: 3rem 6rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.test-section{
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  margin-top: 1.4rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  display: none;
+}
+#input-box {
+  padding: 12px 1.4rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  width: 100%;
+  color: var(--success-color);
+  background-color: rgba(255, 255, 255, 0.842);
+  border: 1px solid rgba(255, 255, 255, 0.842);
+  text-align: center;
+}
+#input-box:focus {
+  outline: none;
+  
+}
+.word{
+  margin: 2rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.main-section-container h1{
+  background-color: rgba(255, 255, 255, 0.699);
+  color: #fff;
+  padding: 10px 2rem;
+  border-radius:8px;
+}
+#start-btn {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 1px solid var(--back-color);
+  cursor: pointer;
+  color: var(--success-color);
+  /* display: none; */
+}
+#reload-btn {
+  margin-top: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background-color: var(--success-color);
+  border: 1px solid var(--back-color);
+  cursor: pointer;
+  color: rgb(255, 35, 35);
+  /* display: none; */
+}
+#start-btn:hover {
+  background-color: rgb(202, 187, 187);
+  color: rgb(255, 35, 35);
+}
+#start-btn:focus {
+  outline: none;
+}
+.game-mode{
+  padding-top:1rem;
+  color: #fff;
+  
+}
+/* bonus time */
+.bonus-container {
+  position: absolute;
+  bottom:20%;
+  right:7%;
+  color: red;
+  font-size: 1.5rem;
+  display: none;
+}
+/* score and time */
+.scores-container{
+  position: absolute;
+  color: #fff;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  display: none;
+}
+#score{
+  color: rgb(255, 0, 64);
+}
+.time-container{
+  position: absolute;
+  color: #fff;
+  bottom: 8%;
+  left:50%;
+  transform: translateX(-50%);
+  display: flex;
+  display: none;
+}
+#time{
+  color: var(--success-color);
+}
+.test-sec-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width:850px) {
+  .setting-container {
+    position: fixed;
+    bottom: 10px;
+    left: 1rem;
+    background-color: aliceblue;
+    color: #333;
+    padding: 1rem;
+    border-radius: 24px;
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 615px) {
+.main-section-container {
+  padding: 2rem 3rem;
+}
+.scores-container{
+  position: absolute;
+  color: #fff;
+  top: 2%;
+  left: 50%;
+  display: flex;
+
+}
+.bonus-container {
+  position: absolute;
+  bottom:17%;
+  right:5%;
+  color: red;
+  font-size: 1.5rem;
+}
+}
+@media (max-width: 520px) {
+  .main-section-container h1{
+    background-color: rgba(255, 255, 255, 0.699);
+    color: #fff;
+    padding: 10px 1rem;
+    border-radius:8px;
+    font-size: 1.3rem;
+  }
+  .main-section-container {
+    padding: 2rem 2rem;
+  }
+  #input-box {
+    padding: 8px 1rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    width: 100%;
+    color: var(--success-color);
+    background-color: rgba(255, 255, 255, 0.842);
+    border: 1px solid rgba(255, 255, 255, 0.842);
+    text-align: center;
+  }
+  .setting-container::after {
+    content: "Toggles The Dificulty Section";
+    position: absolute;
+    top: 50%;
+
+    color: #fff;
+    font-size: 0.8rem;
+    /* width: 200%; */
+    background-color: rgb(255, 75, 75);
+    padding: 1rem;
+    border-radius: 24px;
+    text-align: center;
+  }
+  .bonus-container {
+    position: absolute;
+    bottom:17%;
+    right:3%;
+    color: red;
+    font-size: 1.1rem;
+  }
+  .scores-container{
+    position: absolute;
+    color: #fff;
+    top: 2%;
+    left: 50%;
+    display: flex;
+  white-space: nowrap;
+  }
+}
+@media (max-width: 315px) {
+  #selectDifficulty {
+    margin: 0 0.8rem;
+    padding: 5px 0.9rem;
+  }
+  .difficulty label {
+    font-size: 0.9rem;
+  }
+  .main-section-container h1{
+    background-color: rgba(255, 255, 255, 0.699);
+    color: #fff;
+    padding: 5px 9px;
+    border-radius:8px;
+    font-size: 1.0rem;
+    text-align: center;
+  }
+}
+@media (max-width: 285px) {
+  .setting-container::after {
+    white-space: normal;
+    border-radius: 4px;
+    padding: 10px 1rem;
+  }
+  #selectDifficulty {
+    margin: 0 5px;
+    padding: 5px;
+  }
+  .difficulty label {
+    font-size: 0.7rem;
+  }
+}
